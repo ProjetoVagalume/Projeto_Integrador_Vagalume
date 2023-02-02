@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 @RestController
-@RequestMapping("/tema")
+@RequestMapping("/temas")
 @CrossOrigin("*")
 public class TemaVagalumeController {
 	
@@ -44,12 +44,12 @@ public class TemaVagalumeController {
 		}
 		@GetMapping("/tipodescricao/{tipodescricao}")
 		public ResponseEntity<List<TemaVagalume>>getBytipodescricao(@PathVariable String tipodescricao){
-			return ResponseEntity.ok(temaVagalumeRepository.findAllBytipodescricaoContainingIgnoreCase(tipodescricao));
+			return ResponseEntity.ok(temaVagalumeRepository.findAllByTipodescricaoContainingIgnoreCase(tipodescricao));
 		}
 		
 		@GetMapping("/descricao/{descricao}")
 		public ResponseEntity<List<TemaVagalume>>getBydescricao(@PathVariable String descricao){
-			return ResponseEntity.ok(temaVagalumeRepository.findAllBydescricaoContainingIgnoreCase(descricao));
+			return ResponseEntity.ok(temaVagalumeRepository.findAllByDescricaoContainingIgnoreCase(descricao));
 		}
 		
 		@PostMapping
