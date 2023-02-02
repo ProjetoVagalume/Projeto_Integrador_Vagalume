@@ -4,11 +4,15 @@ import java.util.List;
 
 import org.generation.vagalume.model.TemaVagalume;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface TemaVagalumeRepository extends JpaRepository<TemaVagalume, Long>{
-	public List<TemaVagalume> findAllByDescricaoContainingIgnoreCase(@Param("descricao") String descricao);
+	public List<TemaVagalume> findAllBytipodescricaoContainingIgnoreCase (String tipodescricao);
+	public List<TemaVagalume> findAllBydescricaoContainingIgnoreCase (String descricao);
+	
+}
 
-	}
+	
 
 
