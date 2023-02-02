@@ -8,8 +8,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TemaVagalumeRepository extends JpaRepository<TemaVagalume, Long>{
-	public List<TemaVagalume> findAllBytipodescricaoContainingIgnoreCase (String tipodescricao);
-	public List<TemaVagalume> findAllBydescricaoContainingIgnoreCase (String descricao);
+	public List<TemaVagalume> findAllByTipodescricaoContainingIgnoreCase (String tipodescricao);
+	public List<TemaVagalume> findAllByDescricaoContainingIgnoreCase (String descricao);
 	
 }
 
