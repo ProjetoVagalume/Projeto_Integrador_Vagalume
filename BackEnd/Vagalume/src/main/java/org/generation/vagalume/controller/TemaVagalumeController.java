@@ -1,12 +1,12 @@
-package org.generation.vagalume.controller;
+package org.generation.vagalume.Controller;
 
 import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
+import org.generation.vagalume.Repository.TemaVagalumeRepository;
 import org.generation.vagalume.model.TemaVagalume;
-import org.generation.vagalume.repository.TemaVagalumeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,8 +27,6 @@ import org.springframework.web.server.ResponseStatusException;
 @CrossOrigin("*")
 public class TemaVagalumeController {
 	
-
-
 		@Autowired
 		private TemaVagalumeRepository temaVagalumeRepository;
 		
@@ -36,7 +34,7 @@ public class TemaVagalumeController {
 		public ResponseEntity<List<TemaVagalume>> GetAll(){
 			return ResponseEntity.ok(temaVagalumeRepository.findAll());
 		}
-		@GetMapping("/{Id}")
+		@GetMapping("/{id}")
 		public ResponseEntity<TemaVagalume> getById(@PathVariable Long id){
 			return temaVagalumeRepository.findById(id)
 					.map(resposta -> ResponseEntity.ok(resposta))
