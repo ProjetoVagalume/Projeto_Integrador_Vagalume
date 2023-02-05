@@ -1,4 +1,4 @@
-package org.generation.vagalume.repository;
+package org.generation.vagalume.Repository;
 
 import java.util.List;
 
@@ -12,7 +12,3 @@ public interface TemaVagalumeRepository extends JpaRepository<TemaVagalume, Long
 	public List<TemaVagalume> findAllByDescricaoContainingIgnoreCase (String descricao);
 	
 }
-
-	
-
-
