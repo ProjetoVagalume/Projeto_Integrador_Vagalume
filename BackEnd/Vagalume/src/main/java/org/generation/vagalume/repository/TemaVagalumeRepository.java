@@ -12,7 +12,3 @@ public interface TemaVagalumeRepository extends JpaRepository<TemaVagalume, Long
 	public List<TemaVagalume> findAllByDescricaoContainingIgnoreCase (String descricao);
 	
 }
-
-	
-
-
