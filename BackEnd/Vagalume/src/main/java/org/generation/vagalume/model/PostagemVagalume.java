@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.UpdateTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -27,6 +28,7 @@ public class PostagemVagalume {
 	private String postagemtexto;
 	
 	@UpdateTimestamp
+	@JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
 	private LocalDateTime datapostagem;
 	
 	@ManyToOne

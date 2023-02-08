@@ -1,4 +1,4 @@
-package org.generation.vagalume.Repository;
+package org.generation.vagalume.repository;
 
 import java.util.List;
 

@@ -1,13 +1,15 @@
-package org.generation.vagalume.Controller;
+package org.generation.vagalume.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 /*import java.time.LocalDateTime;*/
 import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
-import org.generation.vagalume.Repository.PostagemVagalumeRepository;
 import org.generation.vagalume.model.PostagemVagalume;
+import org.generation.vagalume.repository.PostagemVagalumeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,6 +24,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
+
 
 @RestController
 @RequestMapping("/postagens")
@@ -40,14 +43,15 @@ public class PostagemVagalumeController {
 		return postagemRepository.findById(id).map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
-
-	/*@GetMapping("/data/{datapostagem}")
-	public ResponseEntity<List<PostagemVagalume>> getDataByDatapostagem(@PathVariable String datapostagem) {
-		return ResponseEntity.ok(postagemRepository.findAllByDatapostagem(datapostagem));
-	}*/
+	@GetMapping("/data/{datapostagem}")
+	public String datapostagem() {
+		LocalDateTime agora = LocalDateTime.now();
+		DateTimeFormatter formatar = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm:ss");
+		return agora.format(formatar);
+	}
 
 	@GetMapping("/postagem/{postagemtexto}")
-	public ResponseEntity<List<PostagemVagalume>> getByPostagemtexto(@PathVariable String postagemtexto) {
+	public ResponseEntity<List<PostagemVagalume>> getPostagemtexto(@PathVariable String postagemtexto) {
 		return ResponseEntity.ok(postagemRepository.findAllByPostagemtextoContainingIgnoreCase(postagemtexto));
 	}
 
