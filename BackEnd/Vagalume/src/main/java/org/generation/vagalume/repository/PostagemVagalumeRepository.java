@@ -1,7 +1,7 @@
-package org.generation.vagalume.Repository;
+package org.generation.vagalume.repository;
 
 
-/*import java.time.LocalDateTime;*/
+
 import java.util.List;
 
 import org.generation.vagalume.model.PostagemVagalume;
@@ -13,8 +13,5 @@ import org.springframework.stereotype.Repository;
 public interface PostagemVagalumeRepository extends JpaRepository<PostagemVagalume, Long>{
 	public List<PostagemVagalume> findAllByPostagemtextoContainingIgnoreCase
 	(@Param("postagemtexto")String postagemtexto);
-	
-	/*public List<PostagemVagalume> findAllByDatapostagem
-	(@Param("datapostagem") String datapostagem);*/
 
 }

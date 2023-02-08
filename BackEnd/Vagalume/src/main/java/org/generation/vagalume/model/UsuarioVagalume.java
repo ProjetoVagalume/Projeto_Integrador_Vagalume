@@ -24,11 +24,11 @@ public class UsuarioVagalume {
 	private Long id;
 	
 	@NotNull(message = "O campo Nome Completo é Obrigatório! ")
-	private String nomecompleto;
+	private String nome;
 	
 	@NotNull(message = "O campo E-mail é Obrigatório! ")
 	@Email(message = "O campo Usuário deve ser um e-mail válido! ")
-	private String usuarios;
+	private String usuario;
 	
 	@NotBlank(message = "O campo senha é Obrigatório! ")
 	@Size(min = 6, message = "A senha deve ter no mínimo 6 caracteres")
@@ -50,20 +50,20 @@ public class UsuarioVagalume {
 		this.id = id;
 	}
 
-	public String getNomecompleto() {
-		return nomecompleto;
+	public String getNome() {
+		return nome;
 	}
 
-	public void setNomecompleto(String nomecompleto) {
-		this.nomecompleto = nomecompleto;
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
-	public String getUsuarios() {
-		return usuarios;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setUsuarios(String usuarios) {
-		this.usuarios = usuarios;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
 	public String getSenha() {

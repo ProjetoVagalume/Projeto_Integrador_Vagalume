@@ -1,12 +1,12 @@
-package org.generation.vagalume.Controller;
+package org.generation.vagalume.controller;
 
 import java.util.List;
 import java.util.Optional;
 
 import javax.validation.Valid;
 
-import org.generation.vagalume.Repository.TemaVagalumeRepository;
 import org.generation.vagalume.model.TemaVagalume;
+import org.generation.vagalume.repository.TemaVagalumeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
