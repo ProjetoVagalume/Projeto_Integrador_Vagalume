@@ -1,8 +1,7 @@
 package org.generation.vagalume.controller;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 /*import java.time.LocalDateTime;*/
+/*import java.time.format.DateTimeFormatter;*/
 import java.util.List;
 import java.util.Optional;
 
@@ -43,12 +42,12 @@ public class PostagemVagalumeController {
 		return postagemRepository.findById(id).map(resposta -> ResponseEntity.ok(resposta))
 				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
-	@GetMapping("/data/{datapostagem}")
+	/*@GetMapping("/data/{datapostagem}")
 	public String datapostagem() {
 		LocalDateTime agora = LocalDateTime.now();
 		DateTimeFormatter formatar = DateTimeFormatter.ofPattern("dd/MM/yyy HH:mm:ss");
 		return agora.format(formatar);
-	}
+	}*/
 
 	@GetMapping("/postagem/{postagemtexto}")
 	public ResponseEntity<List<PostagemVagalume>> getPostagemtexto(@PathVariable String postagemtexto) {
