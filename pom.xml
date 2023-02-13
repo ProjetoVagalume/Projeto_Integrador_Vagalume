@@ -13,7 +13,7 @@
 	<name>Vagalume</name>
 	<description>Projeto Blog Vagalume feito pelo bootcamp da Generation/ Grupo1</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
