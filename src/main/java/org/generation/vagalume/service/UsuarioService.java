@@ -1,4 +1,4 @@
-package org.generation.vagalume.service;
+ package org.generation.vagalume.service;
 
 
 import java.nio.charset.Charset;
