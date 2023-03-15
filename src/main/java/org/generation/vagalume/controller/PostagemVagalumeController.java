@@ -49,9 +49,9 @@ public class PostagemVagalumeController {
 		return agora.format(formatar);
 	}*/
 
-	@GetMapping("/postagem/{postagemtexto}")
-	public ResponseEntity<List<PostagemVagalume>> getPostagemtexto(@PathVariable String postagemtexto) {
-		return ResponseEntity.ok(postagemRepository.findAllByPostagemtextoContainingIgnoreCase(postagemtexto));
+	@GetMapping("/postagem/{nome}")
+	public ResponseEntity<List<PostagemVagalume>> getNome(@PathVariable String nome) {
+		return ResponseEntity.ok(postagemRepository.findAllByPostagemtextoContainingIgnoreCase(nome));
 	}
 
 	@PostMapping
