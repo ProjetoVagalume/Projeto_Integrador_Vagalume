@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PostagemVagalumeRepository extends JpaRepository<PostagemVagalume, Long>{
 	public List<PostagemVagalume> findAllByNomeContainingIgnoreCase
-	(@Param("nome")String nome);
+	(@Param("nome") String nome);
 
 }
