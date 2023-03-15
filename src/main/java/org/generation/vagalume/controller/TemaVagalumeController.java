@@ -40,10 +40,6 @@ public class TemaVagalumeController {
 					.map(resposta -> ResponseEntity.ok(resposta))
 					.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 		}
-		@GetMapping("/tipodescricao/{tipodescricao}")
-		public ResponseEntity<List<TemaVagalume>>getBytipodescricao(@PathVariable String tipodescricao){
-			return ResponseEntity.ok(temaVagalumeRepository.findAllByTipodescricaoContainingIgnoreCase(tipodescricao));
-		}
 		
 		@GetMapping("/descricao/{descricao}")
 		public ResponseEntity<List<TemaVagalume>>getBydescricao(@PathVariable String descricao){
