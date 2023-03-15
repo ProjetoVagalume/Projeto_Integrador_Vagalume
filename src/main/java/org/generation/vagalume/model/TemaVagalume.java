@@ -19,10 +19,7 @@ public class TemaVagalume {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@NotNull(message = "O atributo Tipo Descrição é Obrigatório")
-	private String tipodescricao;
-	
+
 	@NotNull(message = "O atributo Descrição é Obrigatório")
 	private String descricao;
 	
@@ -45,14 +42,6 @@ public class TemaVagalume {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public String getTipodescricao() {
-		return tipodescricao;
-	}
-
-	public void setTipodescricao(String tipodescricao) {
-		this.tipodescricao = tipodescricao;
 	}
 
 	public String getDescricao() {
