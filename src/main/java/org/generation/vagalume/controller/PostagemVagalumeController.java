@@ -51,7 +51,7 @@ public class PostagemVagalumeController {
 
 	@GetMapping("/postagem/{nome}")
 	public ResponseEntity<List<PostagemVagalume>> getNome(@PathVariable String nome) {
-		return ResponseEntity.ok(postagemRepository.findAllByPostagemtextoContainingIgnoreCase(nome));
+		return ResponseEntity.ok(postagemRepository.findAllByNomeContainingIgnoreCase(nome));
 	}
 
 	@PostMapping
