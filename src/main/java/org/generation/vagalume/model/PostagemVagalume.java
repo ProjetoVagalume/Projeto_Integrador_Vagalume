@@ -23,9 +23,22 @@ public class PostagemVagalume {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank(message = "O campo postagem é Obrigatório !")
+	@NotBlank(message = "O campo nome é Obrigatório !")
 	@Size(min = 5, max = 1000, message = " O campo da postagem deve conter no Min 10 e no Máx 1000 caracteres")
-	private String postagemtexto;
+	private String nome;
+
+
+	@NotBlank(message = "O campo telefone é Obrigatório !")
+	private String telefone;
+
+	@NotBlank(message = "O campo endereco é Obrigatório !")
+	private String endereco;
+
+	@NotBlank(message = "O campo horario é Obrigatório !")
+	private String horario;
+
+	@NotBlank(message = "O campo dias é Obrigatório !")
+	private String dias;
 	
 	@UpdateTimestamp
 	@JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
@@ -38,15 +51,62 @@ public class PostagemVagalume {
 	@ManyToOne
 	@JsonIgnoreProperties("postagem")
 	private UsuarioVagalume usuario;
-	
-	
-	
-	public UsuarioVagalume getUsuario() {
-		return usuario;
+
+
+	public Long getId() {
+		return id;
 	}
 
-	public void setUsuario(UsuarioVagalume usuario) {
-		this.usuario = usuario;
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public String getHorario() {
+		return horario;
+	}
+
+	public void setHorario(String horario) {
+		this.horario = horario;
+	}
+
+	public String getDias() {
+		return dias;
+	}
+
+	public void setDias(String dias) {
+		this.dias = dias;
+	}
+
+	public LocalDateTime getDatapostagem() {
+		return datapostagem;
+	}
+
+	public void setDatapostagem(LocalDateTime datapostagem) {
+		this.datapostagem = datapostagem;
 	}
 
 	public TemaVagalume getTemavagalume() {
@@ -57,27 +117,12 @@ public class PostagemVagalume {
 		this.temavagalume = temavagalume;
 	}
 
-	public Long getId() {
-		return id;
+	public UsuarioVagalume getUsuario() {
+		return usuario;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getPostagemtexto() {
-		return postagemtexto;
-	}
-
-	public void setPostagemtexto(String postagemtexto) {
-		this.postagemtexto = postagemtexto;
-	}
-
-	public LocalDateTime getDatapostagem() {
-		return datapostagem;
-	}
-
-	public void setDatapostagem(LocalDateTime datapostagem) {
-		this.datapostagem = datapostagem;
+	public void setUsuario(UsuarioVagalume usuario) {
+		this.usuario = usuario;
 	}
 }
+
